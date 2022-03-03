@@ -86,7 +86,7 @@ x = 40
 result = binarySearch(arr, 0, len(arr)-1, x)
 print(result)
 
-#Fibonacci
+#Fibonacci O(2^n)
 def fibonacci(n):
    if n<3:
       return 1 
@@ -94,3 +94,14 @@ def fibonacci(n):
       return fibonacci(n-1) + fibonacci(n-2)
 
 print(fibonacci(15))
+
+#time complexity O(log n)
+#https://www.youtube.com/watch?v=-3Lt-EwR_Hw
+def fastExponential(a, n):
+   if n ==0:
+      return 1
+   answer = fastExponential(a, (int)(n/2))
+   if n ==1:
+      answer * answer
+   else:
+      answer * answer * a #important that we use the variable answer twice instead of calling the function twice
