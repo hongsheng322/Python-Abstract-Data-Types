@@ -24,10 +24,11 @@ public class reader {
         // System.out.println(y);
 
         File file = new File("yoink.txt");
-        FileWriter fileWriter = new FileWriter(file);
-        fileWriter.append("yoink\n");
-        fileWriter.append("yee");
-        fileWriter.close();
+        //FileWriter fileWriter = new FileWriter(file, true);
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+        bw.append("yoink\n");
+        bw.append("yee\n");
+        bw.close();
 
         // reading text file using buffered reader and file reader
         System.out.println("buffered reader");
